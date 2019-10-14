@@ -1,7 +1,7 @@
 {
-  "name": "eth-lib",
-  "version": "0.2.8",
-  "description": "Lightweight Ethereum libraries",
+  "name": "cfx-lib",
+  "version": "0.0.1",
+  "description": "Lightweight Conflux libraries",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir=lib",
@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maiavictor/eth-lib.git"
+    "url": "git+https://github.com/Conflux-Chain/cfx-lib.git"
   },
   "keywords": [
-    "ethereum"
+    "conflux"
   ],
   "author": "Victor Maia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maiavictor/eth-lib/issues"
+    "url": "https://github.com/Conflux-Chain/cfx-lib/issues"
   },
-  "homepage": "https://github.com/maiavictor/eth-lib#readme",
+  "homepage": "https://github.com/Conflux-Chain/cfx-lib#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
