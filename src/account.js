@@ -37,7 +37,7 @@ const fromPrivate = privateKey => {
 const encodeSignature = ([v, r, s]) =>
   Bytes.flatten([r,s,v]);
 
-const decodeSignature = (hex) => [ 
+const decodeSignature = (hex) => [
   Bytes.slice(64, Bytes.length(hex), hex),
   Bytes.slice(0, 32, hex),
   Bytes.slice(32, 64, hex)];
@@ -52,7 +52,7 @@ const makeSigner = addToV => (hash, privateKey) => {
     Bytes.pad(32, Bytes.fromNat("0x" + signature.s.toString(16)))]);
 }
 
-const sign = makeSigner(27); // v=27|28 instead of 0|1...
+const sign = makeSigner(0); // v=27|28 instead of 0|1...
 
 const recover = (hash, signature) => {
   const vals = decodeSignature(signature);
@@ -64,7 +64,7 @@ const recover = (hash, signature) => {
   return address;
 }
 
-module.exports = { 
+module.exports = {
   create,
   toChecksum,
   fromPrivate,
