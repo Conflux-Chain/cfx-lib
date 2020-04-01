@@ -27,7 +27,7 @@ const fromPrivate = privateKey => {
   const ecKey = secp256k1.keyFromPrivate(buffer);
   const publicKey = "0x" + ecKey.getPublic(false, 'hex').slice(2);
   const publicHash = keccak256(publicKey);
-  const address = toChecksum("0x10" + publicHash.slice(-38));
+  const address = toChecksum("0x1" + publicHash.slice(-39));
   return {
     address: address,
     privateKey: privateKey
@@ -60,7 +60,7 @@ const recover = (hash, signature) => {
   const ecPublicKey = secp256k1.recoverPubKey(new Buffer(hash.slice(2), "hex"), vrs, vrs.v < 2 ? vrs.v : 1 - (vrs.v % 2)); // because odd vals mean v=0... sadly that means v=0 means v=1... I hate that
   const publicKey = "0x" + ecPublicKey.encode("hex", false).slice(2);
   const publicHash = keccak256(publicKey);
-  const address = toChecksum("0x10" + publicHash.slice(-38));
+  const address = toChecksum("0x1" + publicHash.slice(-39));
   return address;
 }
 
